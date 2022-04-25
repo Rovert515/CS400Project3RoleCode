@@ -12,7 +12,6 @@ public class CityDistanceBD implements ICityDistanceBD {
 
     }
 
-    // void???? in the initial interface
     @Override
     public void getCities() {
 
@@ -30,6 +29,12 @@ public class CityDistanceBD implements ICityDistanceBD {
 
     @Override
     public List<String> getPathCities() {
-        return null;
+        List<String> listCityPath = new ArrayList<>();
+        listCityPath.add("Chicago");
+        listCityPath.add("Toledo");
+        listCityPath.add("Philadelphia");
+        listCityPath.add("New York");
+
+        return listCityPath;
     }
 }
