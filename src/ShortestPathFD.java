@@ -6,23 +6,17 @@ public class ShortestPathFD implements IShortestPathFD {
     private String input;
     private int num;
     private final Scanner scnr;
-    private List<String> availableCities; // data wrangler's job
-    private int city1;
-    private int city2;
+    private List<String> availableCities;
+    private int rating;
 
     public ShortestPathFD(CityDistanceBD backend) {
         scnr = new Scanner(System.in);
-        this.city1 = 21;
-        this.city2 = 42;
-
-        //this.city1 = city1;
-        //this.city2 = city2;
     }
 
 
     @Override
     public void runCommandLoop() {
-        System.out.println("Welcome to the City Shortest Path App!\n=================================");
+        System.out.println("Welcome to the Game Searcher App!\n=================================");
         boolean running = true;
         do {
             displayCommandMenu();
@@ -46,14 +40,14 @@ public class ShortestPathFD implements IShortestPathFD {
                 case "p":
                 case "3":
                     try {
-                        CityDistanceBD.getPathCities(listCityPath); // backend's job, not mine
+                        getPathCities(); // backend's job, not mine
                     } catch (Exception e) {
-                        System.out.println("No cities in between or smth idk");
+                        System.out.println("Wishlist empty.");
                     }
                     break;
                 case "q":
                 case "4":
-                    System.out.println("see ya later dude");
+                    System.out.println("Thanks for using our app!");
                     running = false;
                     break;
                 default:
@@ -71,7 +65,7 @@ public class ShortestPathFD implements IShortestPathFD {
 
     }
 
-    // call method to read txt file || print all cities manually
+    // call method to read txt file --> or print all cities manually
     @Override
     public List<String> listCities() {
         List<String> listCities = new ArrayList<>();
@@ -82,20 +76,17 @@ public class ShortestPathFD implements IShortestPathFD {
 
     }
 
-    // TODO: need to work on placeholder class for backend to see how cities are being added
+    // need to work on placeholder class for backend to see how cities are being added
     @Override
     public int addCities(int city1, int city2) {
-        return city1 + city2;
+        return 0;
     }
 
-    // TODO: figure out how algo engineer is doing this
     @Override
     public List<String> citiesBetween() {
-
         return null;
     }
 
-    // TODO: figure out how algo engineer is doing this
     @Override
     public List<String> highwayNames() {
         return null;
