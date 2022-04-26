@@ -7,7 +7,8 @@ public class ShortestPathFD implements IShortestPathFD {
     private int num;
     private final Scanner scnr;
     private List<String> availableCities;
-    private int rating;
+    private int city1;
+    private int city2;
 
     public ShortestPathFD(CityDistanceBD backend) {
         scnr = new Scanner(System.in);
@@ -16,7 +17,7 @@ public class ShortestPathFD implements IShortestPathFD {
 
     @Override
     public void runCommandLoop() {
-        System.out.println("Welcome to the Game Searcher App!\n=================================");
+        System.out.println("Welcome to the Shortest Path App!\n=================================");
         boolean running = true;
         do {
             displayCommandMenu();
@@ -42,12 +43,12 @@ public class ShortestPathFD implements IShortestPathFD {
                     try {
                         getPathCities(); // backend's job, not mine
                     } catch (Exception e) {
-                        System.out.println("Wishlist empty.");
+                        System.out.println("No cities between there or smth idk");
                     }
                     break;
                 case "q":
                 case "4":
-                    System.out.println("Thanks for using our app!");
+                    System.out.println("catch you later bestie!!");
                     running = false;
                     break;
                 default:
@@ -65,7 +66,7 @@ public class ShortestPathFD implements IShortestPathFD {
 
     }
 
-    // call method to read txt file --> or print all cities manually
+    // call method to read txt file || print all cities manually
     @Override
     public List<String> listCities() {
         List<String> listCities = new ArrayList<>();
@@ -82,11 +83,13 @@ public class ShortestPathFD implements IShortestPathFD {
         return 0;
     }
 
+    //TODO: Figure out how algo engineer is doing this
     @Override
     public List<String> citiesBetween() {
         return null;
     }
 
+    // TODO: figure out how data wrangler is storing the highways
     @Override
     public List<String> highwayNames() {
         return null;
